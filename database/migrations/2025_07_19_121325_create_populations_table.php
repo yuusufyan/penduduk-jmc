@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('populations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('regency_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('total');
             $table->timestamps();
         });
     }
